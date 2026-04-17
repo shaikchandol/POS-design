@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg: #f3f4f6;
+  --color-sidebar: #1e293b;
+  --color-card-bg: #ffffff;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+  --color-accent: #2563eb;
+  --color-border: #e2e8f0;
+  --color-code-bg: #f8fafc;
+  --color-success: #10b981;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-bg text-text-main;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition-all text-sm font-medium border border-border bg-white text-text-main hover:bg-gray-50 flex items-center gap-2;
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-white border-accent hover:bg-blue-700 shadow-sm;
+  }
+
+  .canvas-container {
+    @apply bg-white border border-border rounded-xl flex flex-col overflow-hidden shadow-sm;
+  }
+
+  .canvas-header {
+    @apply px-5 py-4 border-b border-border flex justify-between items-center bg-white;
+  }
+
+  .panel-container {
+    @apply bg-white border border-border rounded-xl flex flex-col overflow-hidden shadow-sm;
+  }
+
+  .panel-tab {
+    @apply p-4 border-b border-border font-semibold text-xs uppercase tracking-wider text-text-muted bg-gray-50/50;
+  }
+
+  .code-block {
+    @apply bg-code-bg p-3 border border-border rounded-md font-mono text-[11px] leading-relaxed text-slate-700;
+  }
+
+  .status-pill {
+    @apply inline-block px-2 py-0.5 rounded-full bg-emerald-50 text-success font-bold text-[10px] uppercase tracking-wide;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all cursor-pointer text-slate-400 hover:text-white hover:bg-white/5;
+  }
+
+  .nav-item.active {
+    @apply text-white font-semibold bg-white/10;
+  }
+
+  .nav-dot {
+    @apply w-1.5 h-1.5 rounded-full bg-slate-600;
+  }
+
+  .nav-item.active .nav-dot {
+    @apply bg-accent;
+  }
+}
+
+.mermaid-chart svg {
+  @apply max-w-full h-auto;
+}
+
+/* Mermaid customization to match light theme */
+.mermaid-chart {
+  @apply bg-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-300;
+}

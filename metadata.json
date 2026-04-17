@@ -1,0 +1,6 @@
+{
+  "name": "Retail POS Modular Monolith Architecture Explorer",
+  "description": "A comprehensive architecture and design explorer for a cloud-agnostic .NET modular monolith POS system with multi-tenancy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
